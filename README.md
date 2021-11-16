@@ -2,7 +2,7 @@
 A query virion for Pocketmine-MP\
 This virion uses GS4 to query servers which provides more info. Servers that don't have GS4 supported/enabled can't be queried using this virion, so you need to use another virion such as [libpmquery](https://github.com/jasonwynn10/libpmquery)
 ## Usage
-First you create a new GameSpyQuery instance, first argument is the IP address to query, second argument is the port to query
+First you create a new `GameSpyQuery` instance, first argument is the IP address to query, second argument is the port to query
 ```php
 $query = new GameSpyQuery("someserver.org", 19132);
 ```
@@ -10,11 +10,11 @@ Then we query the server
 ```php
 $query->query();
 ```
-You can also set a timeout in seconds (optional)
+You can also set a timeout in seconds (optional), the default timeout is 2 seconds
 ```php
 $query->query(5);
 ```
-The `query()` function will throw a GameSpyQueryException if the destination IP and port can't be queried, so you need to surround it with a try-catch block\
+The `query()` function will throw a `GameSpyQueryException` if the destination IP and port can't be queried, so you need to surround it with a try-catch block\
 If everything worked correctly, you can use the `get()` function to get some info about the server\
 List of the data you can get:
 ```php
