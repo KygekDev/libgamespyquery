@@ -1,6 +1,21 @@
 # libgamespyquery
-A query virion for Pocketmine-MP\
-This virion uses GS4 to query servers which provides more info. Servers that don't have GS4 supported/enabled can't be queried using this virion, so you need to use another virion such as [libpmquery](https://github.com/jasonwynn10/libpmquery)
+A query virion and library for Pocketmine-MP\
+This virion/library uses GS4 to query servers which provides more info. Servers that don't have GS4 supported/enabled can't be queried using this virion/library, so you need to use another virion such as [libpmquery](https://github.com/jasonwynn10/libpmquery)
+
+## Installation
+Add this to your `.poggit.yml` to add the virion into your plugin
+```yml
+libs:
+  - src: KygekDev/libgamespyquery/libgamespyquery
+    branch: main
+    version: ^2.0
+```
+Or if you want to use as a Composer library, open a command line and run this
+```
+composer require mmm545/libgamespyquery
+```
+More information about this Composer library can be found in [Packagist](https://packagist.org/packages/mmm545/libgamespyquery)
+
 ## Usage
 First you create a new `GameSpyQuery` instance, first argument is the IP address to query, second argument is the port to query
 ```php
