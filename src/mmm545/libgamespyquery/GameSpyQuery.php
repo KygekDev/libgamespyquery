@@ -31,7 +31,11 @@ class GameSpyQuery
     
     private $socket;
 
-    private $statusRaw;
+    /**
+     * @var string|bool|null $statusRaw
+     * Raw server status response, null if server haven't been queried
+     */
+    private $statusRaw = null;
 
     /**
      * @param string $ip IP to query
@@ -161,10 +165,10 @@ class GameSpyQuery
     }
 
     /**
-     * @return string The raw status response from the server, or false if the status data is null
+     * @return string|bool The raw status response from the server, or false if the status data is null
      */
     public function getStatusRaw(){
-        return isset($this->statusRaw) ? $this->statusRaw : false;
+        return $this->statusRaw ?? false;
     }
 
     /**
@@ -175,23 +179,9 @@ class GameSpyQuery
     }
 
     /**
-     * @param string $ip
-     */
-    public function setIp(string $ip): void{
-        $this->ip = $ip;
-    }
-
-    /**
      * @return int
      */
     public function getPort(): int{
         return $this->port;
-    }
-
-    /**
-     * @param int $port
-     */
-    public function setPort(int $port): void{
-        $this->port = $port;
     }
 }
