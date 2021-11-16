@@ -189,7 +189,7 @@ class GameSpyQuery
      * @return string
      */
     public function __toString(): string{
-        $queried = $this->statusRaw ? "true" : "false";
+        $queried = $this->getStatusRaw() ? "true" : "false";
         return self::class . "(ip={$this->getIp()},port={$this->getPort()},queried=$queried)";
     }
 }
