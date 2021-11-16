@@ -184,4 +184,12 @@ class GameSpyQuery
     public function getPort(): int{
         return $this->port;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string{
+        $queried = $this->statusRaw ? "true" : "false";
+        return self::class . "(ip={$this->getIp()},port={$this->getPort()},queried=$queried)";
+    }
 }
